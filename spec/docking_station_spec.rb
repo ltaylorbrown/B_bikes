@@ -1,4 +1,5 @@
 require 'docking_station'
+require 'bike'
 
 describe DockingStation do
 
@@ -43,6 +44,8 @@ describe DockingStation do
       expect { subject.release_bike }.to raise_error 'No bikes available'
     end
 
+    
+
   end
     describe '#dock' do
       it 'raises an error when full' do
@@ -52,6 +55,7 @@ describe DockingStation do
     end
 
     describe 'initialization' do
+
       it 'has a variable capacity' do
         docking_station = DockingStation.new(50)
         50.times { docking_station.dock Bike.new }
@@ -62,6 +66,7 @@ describe DockingStation do
     describe 'initialization' do
       subject { DockingStation.new }
       let(:bike) { Bike.new }
+
       it 'defaults capacity' do
         described_class::DEFAULT_CAPACITY.times do
           subject.dock(bike)

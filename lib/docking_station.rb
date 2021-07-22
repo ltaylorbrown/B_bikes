@@ -19,6 +19,8 @@ DEFAULT_CAPACITY = 20
   def dock(bike)
     fail 'Docking station full' if full?
     bikes << bike
+    
+    # capacity = DEFAULT_CAPACITY - 
   end 
   
 private
